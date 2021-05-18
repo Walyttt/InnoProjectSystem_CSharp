@@ -14,7 +14,10 @@ namespace InnoProjectSystem.src.Util
     {
         public SqlConnection getConnection()
         {
-
+            string strCnn = ConfigurationManager.ConnectionStrings["InnoProjectCnnString"].ConnectionString;
+            SqlConnection cnn = new SqlConnection(strCnn);
+            return cnn;
         }
+
     }
 }
