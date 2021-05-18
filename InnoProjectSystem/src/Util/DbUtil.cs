@@ -12,7 +12,7 @@ namespace InnoProjectSystem.src.Util
 {
     class DbUtil
     {
-        public SqlConnection getConnection()
+        public static SqlConnection getConnection()
         {
             string strCnn = ConfigurationManager.ConnectionStrings["InnoProjectCnnString"].ConnectionString;
             SqlConnection cnn = new SqlConnection(strCnn);

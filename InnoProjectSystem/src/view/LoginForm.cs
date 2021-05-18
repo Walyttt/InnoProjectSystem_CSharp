@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Odbc;
+using System.Data.SqlClient;
+using InnoProjectSystem.src.Util;
+using System.Data.
 
 namespace InnoProjectSystem
 {
@@ -38,6 +41,20 @@ namespace InnoProjectSystem
             string userid = UseridTxt.Text;
             string userpwd = PwdTxt.Text;
 
+            string cmdTxt = "Select name from Users where Id=@userid and pwd=@userpwd";
+            SqlConnection cnn = DbUtil.getConnection();
+            SqlCommand cmd = new SqlCommand(cmdTxt, cnn);
+            cmd.Parameters.AddWithValue("@userid", userid);
+            cmd.Parameters.AddWithValue("@userpwd", userpwd);
+
+            if (cmd.ExecuteScalar() == null)
+            {
+                FaultLabel.Visible = true;
+                return;
+            }
+
+            //登录成功，进入管理界面
+            
         }
     }
 }
