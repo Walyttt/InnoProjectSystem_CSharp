@@ -31,6 +31,8 @@ namespace InnoProjectSystem.src.view
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.个人信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.项目管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.人员管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -38,7 +40,9 @@ namespace InnoProjectSystem.src.view
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.个人信息ToolStripMenuItem});
+            this.个人信息ToolStripMenuItem,
+            this.项目管理ToolStripMenuItem,
+            this.人员管理ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 28);
@@ -51,6 +55,18 @@ namespace InnoProjectSystem.src.view
             this.个人信息ToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
             this.个人信息ToolStripMenuItem.Text = "个人信息";
             // 
+            // 项目管理ToolStripMenuItem
+            // 
+            this.项目管理ToolStripMenuItem.Name = "项目管理ToolStripMenuItem";
+            this.项目管理ToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
+            this.项目管理ToolStripMenuItem.Text = "项目管理";
+            // 
+            // 人员管理ToolStripMenuItem
+            // 
+            this.人员管理ToolStripMenuItem.Name = "人员管理ToolStripMenuItem";
+            this.人员管理ToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
+            this.人员管理ToolStripMenuItem.Text = "人员管理";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -59,7 +75,7 @@ namespace InnoProjectSystem.src.view
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
-            this.Text = "MainForm";
+            this.Text = "创新工程管理";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -71,5 +87,7 @@ namespace InnoProjectSystem.src.view
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 个人信息ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 项目管理ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 人员管理ToolStripMenuItem;
     }
 }
