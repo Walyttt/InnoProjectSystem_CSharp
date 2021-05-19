@@ -29,97 +29,106 @@ namespace InnoProjectSystem.src.view
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.个人信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Mainmenu = new System.Windows.Forms.MenuStrip();
+            this.PersonInfoItem = new System.Windows.Forms.ToolStripMenuItem();
             this.项目管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ProjectQandCItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ProjectAddItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ProjectTypeItem = new System.Windows.Forms.ToolStripMenuItem();
             this.人员管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.项目查询修改ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.项目添加ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.项目类型管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.人员查询ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.人员添加ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
+            this.PeopleQandCItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.PeopleAddItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MainPanel = new System.Windows.Forms.Panel();
+            this.Mainmenu.SuspendLayout();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // Mainmenu
             // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.个人信息ToolStripMenuItem,
+            this.Mainmenu.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.Mainmenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.PersonInfoItem,
             this.项目管理ToolStripMenuItem,
             this.人员管理ToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
+            this.Mainmenu.Location = new System.Drawing.Point(0, 0);
+            this.Mainmenu.Name = "Mainmenu";
+            this.Mainmenu.Size = new System.Drawing.Size(979, 28);
+            this.Mainmenu.TabIndex = 0;
+            this.Mainmenu.Text = "menuStrip1";
             // 
-            // 个人信息ToolStripMenuItem
+            // PersonInfoItem
             // 
-            this.个人信息ToolStripMenuItem.Name = "个人信息ToolStripMenuItem";
-            this.个人信息ToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
-            this.个人信息ToolStripMenuItem.Text = "个人信息";
+            this.PersonInfoItem.Name = "PersonInfoItem";
+            this.PersonInfoItem.Size = new System.Drawing.Size(83, 24);
+            this.PersonInfoItem.Text = "个人信息";
             // 
             // 项目管理ToolStripMenuItem
             // 
             this.项目管理ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.项目查询修改ToolStripMenuItem,
-            this.项目添加ToolStripMenuItem,
-            this.项目类型管理ToolStripMenuItem});
+            this.ProjectQandCItem,
+            this.ProjectAddItem,
+            this.ProjectTypeItem});
             this.项目管理ToolStripMenuItem.Name = "项目管理ToolStripMenuItem";
             this.项目管理ToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
             this.项目管理ToolStripMenuItem.Text = "项目管理";
             // 
+            // ProjectQandCItem
+            // 
+            this.ProjectQandCItem.Name = "ProjectQandCItem";
+            this.ProjectQandCItem.Size = new System.Drawing.Size(224, 26);
+            this.ProjectQandCItem.Text = "项目查询/修改";
+            // 
+            // ProjectAddItem
+            // 
+            this.ProjectAddItem.Name = "ProjectAddItem";
+            this.ProjectAddItem.Size = new System.Drawing.Size(224, 26);
+            this.ProjectAddItem.Text = "项目添加";
+            // 
+            // ProjectTypeItem
+            // 
+            this.ProjectTypeItem.Name = "ProjectTypeItem";
+            this.ProjectTypeItem.Size = new System.Drawing.Size(224, 26);
+            this.ProjectTypeItem.Text = "项目类型管理";
+            // 
             // 人员管理ToolStripMenuItem
             // 
             this.人员管理ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.人员查询ToolStripMenuItem,
-            this.人员添加ToolStripMenuItem});
+            this.PeopleQandCItem,
+            this.PeopleAddItem});
             this.人员管理ToolStripMenuItem.Name = "人员管理ToolStripMenuItem";
             this.人员管理ToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
             this.人员管理ToolStripMenuItem.Text = "人员管理";
             // 
-            // 项目查询修改ToolStripMenuItem
+            // PeopleQandCItem
             // 
-            this.项目查询修改ToolStripMenuItem.Name = "项目查询修改ToolStripMenuItem";
-            this.项目查询修改ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.项目查询修改ToolStripMenuItem.Text = "项目查询/修改";
+            this.PeopleQandCItem.Name = "PeopleQandCItem";
+            this.PeopleQandCItem.Size = new System.Drawing.Size(224, 26);
+            this.PeopleQandCItem.Text = "人员查询/修改";
             // 
-            // 项目添加ToolStripMenuItem
+            // PeopleAddItem
             // 
-            this.项目添加ToolStripMenuItem.Name = "项目添加ToolStripMenuItem";
-            this.项目添加ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.项目添加ToolStripMenuItem.Text = "项目添加";
+            this.PeopleAddItem.Name = "PeopleAddItem";
+            this.PeopleAddItem.Size = new System.Drawing.Size(224, 26);
+            this.PeopleAddItem.Text = "人员添加";
             // 
-            // 项目类型管理ToolStripMenuItem
+            // MainPanel
             // 
-            this.项目类型管理ToolStripMenuItem.Name = "项目类型管理ToolStripMenuItem";
-            this.项目类型管理ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.项目类型管理ToolStripMenuItem.Text = "项目类型管理";
-            // 
-            // 人员查询ToolStripMenuItem
-            // 
-            this.人员查询ToolStripMenuItem.Name = "人员查询ToolStripMenuItem";
-            this.人员查询ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.人员查询ToolStripMenuItem.Text = "人员查询/修改";
-            // 
-            // 人员添加ToolStripMenuItem
-            // 
-            this.人员添加ToolStripMenuItem.Name = "人员添加ToolStripMenuItem";
-            this.人员添加ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.人员添加ToolStripMenuItem.Text = "人员添加";
+            this.MainPanel.Location = new System.Drawing.Point(0, 23);
+            this.MainPanel.Name = "MainPanel";
+            this.MainPanel.Size = new System.Drawing.Size(979, 584);
+            this.MainPanel.TabIndex = 1;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
+            this.ClientSize = new System.Drawing.Size(979, 607);
+            this.Controls.Add(this.MainPanel);
+            this.Controls.Add(this.Mainmenu);
+            this.MainMenuStrip = this.Mainmenu;
             this.Name = "MainForm";
             this.Text = "创新工程管理";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.Mainmenu.ResumeLayout(false);
+            this.Mainmenu.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -127,14 +136,15 @@ namespace InnoProjectSystem.src.view
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem 个人信息ToolStripMenuItem;
+        private System.Windows.Forms.MenuStrip Mainmenu;
+        private System.Windows.Forms.ToolStripMenuItem PersonInfoItem;
         private System.Windows.Forms.ToolStripMenuItem 项目管理ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 人员管理ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 项目查询修改ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 项目添加ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 项目类型管理ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 人员查询ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 人员添加ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ProjectQandCItem;
+        private System.Windows.Forms.ToolStripMenuItem ProjectAddItem;
+        private System.Windows.Forms.ToolStripMenuItem ProjectTypeItem;
+        private System.Windows.Forms.ToolStripMenuItem PeopleQandCItem;
+        private System.Windows.Forms.ToolStripMenuItem PeopleAddItem;
+        private System.Windows.Forms.Panel MainPanel;
     }
 }
