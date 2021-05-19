@@ -33,6 +33,11 @@ namespace InnoProjectSystem.src.view
             this.个人信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.项目管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.人员管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.项目查询修改ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.项目添加ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.项目类型管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.人员查询ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.人员添加ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,15 +62,52 @@ namespace InnoProjectSystem.src.view
             // 
             // 项目管理ToolStripMenuItem
             // 
+            this.项目管理ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.项目查询修改ToolStripMenuItem,
+            this.项目添加ToolStripMenuItem,
+            this.项目类型管理ToolStripMenuItem});
             this.项目管理ToolStripMenuItem.Name = "项目管理ToolStripMenuItem";
             this.项目管理ToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
             this.项目管理ToolStripMenuItem.Text = "项目管理";
             // 
             // 人员管理ToolStripMenuItem
             // 
+            this.人员管理ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.人员查询ToolStripMenuItem,
+            this.人员添加ToolStripMenuItem});
             this.人员管理ToolStripMenuItem.Name = "人员管理ToolStripMenuItem";
             this.人员管理ToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
             this.人员管理ToolStripMenuItem.Text = "人员管理";
+            // 
+            // 项目查询修改ToolStripMenuItem
+            // 
+            this.项目查询修改ToolStripMenuItem.Name = "项目查询修改ToolStripMenuItem";
+            this.项目查询修改ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.项目查询修改ToolStripMenuItem.Text = "项目查询/修改";
+            // 
+            // 项目添加ToolStripMenuItem
+            // 
+            this.项目添加ToolStripMenuItem.Name = "项目添加ToolStripMenuItem";
+            this.项目添加ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.项目添加ToolStripMenuItem.Text = "项目添加";
+            // 
+            // 项目类型管理ToolStripMenuItem
+            // 
+            this.项目类型管理ToolStripMenuItem.Name = "项目类型管理ToolStripMenuItem";
+            this.项目类型管理ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.项目类型管理ToolStripMenuItem.Text = "项目类型管理";
+            // 
+            // 人员查询ToolStripMenuItem
+            // 
+            this.人员查询ToolStripMenuItem.Name = "人员查询ToolStripMenuItem";
+            this.人员查询ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.人员查询ToolStripMenuItem.Text = "人员查询/修改";
+            // 
+            // 人员添加ToolStripMenuItem
+            // 
+            this.人员添加ToolStripMenuItem.Name = "人员添加ToolStripMenuItem";
+            this.人员添加ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.人员添加ToolStripMenuItem.Text = "人员添加";
             // 
             // MainForm
             // 
@@ -89,5 +131,10 @@ namespace InnoProjectSystem.src.view
         private System.Windows.Forms.ToolStripMenuItem 个人信息ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 项目管理ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 人员管理ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 项目查询修改ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 项目添加ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 项目类型管理ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 人员查询ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 人员添加ToolStripMenuItem;
     }
 }
