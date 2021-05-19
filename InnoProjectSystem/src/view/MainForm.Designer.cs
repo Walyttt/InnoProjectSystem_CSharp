@@ -30,16 +30,26 @@ namespace InnoProjectSystem.src.view
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.个人信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.个人信息ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // 个人信息ToolStripMenuItem
+            // 
+            this.个人信息ToolStripMenuItem.Name = "个人信息ToolStripMenuItem";
+            this.个人信息ToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
+            this.个人信息ToolStripMenuItem.Text = "个人信息";
             // 
             // MainForm
             // 
@@ -50,6 +60,8 @@ namespace InnoProjectSystem.src.view
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.Text = "MainForm";
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -58,5 +70,6 @@ namespace InnoProjectSystem.src.view
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem 个人信息ToolStripMenuItem;
     }
 }

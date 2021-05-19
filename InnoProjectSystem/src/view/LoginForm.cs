@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using System.Data.Odbc;
 using System.Data.SqlClient;
 using InnoProjectSystem.src.Util;
-using System.Data.
 
 namespace InnoProjectSystem
 {
@@ -31,7 +30,7 @@ namespace InnoProjectSystem
         private void AckBtn_Click(object sender, EventArgs e)
         {
             //输入验证
-            if(UseridTxt.Text == null || PwdTxt.Text == null)
+            if(UseridTxt.Text == String.Empty || PwdTxt.Text == String.Empty)
             {
                 FaultLabel.Visible = true;
                 return;
@@ -47,14 +46,30 @@ namespace InnoProjectSystem
             cmd.Parameters.AddWithValue("@userid", userid);
             cmd.Parameters.AddWithValue("@userpwd", userpwd);
 
-            if (cmd.ExecuteScalar() == null)
+            try
             {
-                FaultLabel.Visible = true;
-                return;
+                cnn.Open();
+                if (cmd.ExecuteScalar() == null)
+                {
+                    FaultLabel.Visible = true;
+                    return;
+                }
+            }
+            catch(Exception ex)
+            {
+                ;
+            }
+            finally
+            {
+                if (cnn.State == ConnectionState.Open)
+                {
+                    cnn.Close();
+                }
             }
 
-            //登录成功，进入管理界面
-            
+            //登录成功，返回确认值
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
     }
 }
