@@ -31,7 +31,13 @@ namespace InnoProjectSystem.src.view
                 return;
             }
 
-
+            if (this.user.ChangePwd(NewpwdTxt.Text)){
+                MessageBox.Show("修改成功");
+            }
+            else
+            {
+                MessageBox.Show("修改失败");
+            }
         }
     }
 }

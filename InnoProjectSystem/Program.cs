@@ -19,11 +19,14 @@ namespace InnoProjectSystem
             Application.SetCompatibleTextRenderingDefault(false);
 
             LoginForm loginForm = new LoginForm();
+            loginForm.StartPosition = FormStartPosition.CenterScreen;
             DialogResult dialogResult = loginForm.ShowDialog();
 
             if (dialogResult == DialogResult.OK)
             {
-                Application.Run(new MainForm());
+                MainForm mainForm = new MainForm(loginForm.user);
+                mainForm.StartPosition = FormStartPosition.CenterScreen;
+                Application.Run(mainForm);
             }
         }
     }

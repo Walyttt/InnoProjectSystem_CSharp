@@ -13,15 +13,17 @@ namespace InnoProjectSystem.src.view
 {
     public partial class MainForm : Form
     {
-        public MainForm()
+        public User user;
+        public MainForm(User u)
         {
             InitializeComponent();
+            this.user = u;
         }
 
         private void PersonInfoItem_Click(object sender, EventArgs e)
         {
             MainPanel.Controls.Clear();
-            MainPanel.Controls.Add(new PersonInfoPanel());
+            MainPanel.Controls.Add(new PersonInfoPanel(this.user));
         }
     }
 }

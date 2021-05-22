@@ -16,6 +16,10 @@ namespace InnoProjectSystem.src.models
 		private string colName;
 		private int pGroup;
 
+        public Project()
+        {
+        }
+
         public Project(string pNo = null, string pName = null, string fName = null, string ptName = null, string subName = null, string colName = null, int pGroup = 0)
         {
             this.PNo = pNo;

@@ -15,6 +15,10 @@ namespace InnoProjectSystem.src.models
 		private string fCollege;
 		private string fEmail;
 
+        public Faculty()
+        {
+        }
+
         public Faculty(string fNo = null, string fName = null, string fGender = null, string fTitle = null, string fCollege = null, string fEmail = null)
         {
             this.FNo = fNo;

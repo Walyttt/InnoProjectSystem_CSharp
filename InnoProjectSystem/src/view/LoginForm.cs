@@ -10,14 +10,18 @@ using System.Windows.Forms;
 using System.Data.Odbc;
 using System.Data.SqlClient;
 using InnoProjectSystem.src.Util;
+using InnoProjectSystem.src.models;
 
 namespace InnoProjectSystem
 {
     public partial class LoginForm : Form
     {
+        public User user;
+
         public LoginForm()
         {
             InitializeComponent();
+            this.user = new User();
         }
 
         /*取消按钮，退出程序*/
@@ -39,6 +43,7 @@ namespace InnoProjectSystem
             //身份验证
             string userid = UseridTxt.Text;
             string userpwd = PwdTxt.Text;
+            string username = "";
 
             string cmdTxt = "Select name from Users where Id=@userid and pwd=@userpwd";
             SqlConnection cnn = DbUtil.getConnection();
@@ -49,11 +54,14 @@ namespace InnoProjectSystem
             try
             {
                 cnn.Open();
-                if (cmd.ExecuteScalar() == null)
+                object tempobj = cmd.ExecuteScalar();
+                if (tempobj == null)
                 {
+                    cnn.Close();
                     FaultLabel.Visible = true;
                     return;
                 }
+                username = tempobj.ToString();
             }
             catch(Exception ex)
             {
@@ -67,7 +75,10 @@ namespace InnoProjectSystem
                 }
             }
 
-            //登录成功，返回确认值
+            //登录成功，构造user对象，返回确认值
+            this.user.Id = userid;
+            this.user.Name = username;
+            this.user.Pwd = userpwd;
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
