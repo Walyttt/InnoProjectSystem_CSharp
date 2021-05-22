@@ -16,5 +16,11 @@ namespace InnoProjectSystem.src.view
         {
             InitializeComponent();
         }
+
+        private void PersonInfoItem_Click(object sender, EventArgs e)
+        {
+            MainPanel.Controls.Clear();
+            MainPanel.Controls.Add(new PersonInfoPanel());
+        }
     }
 }

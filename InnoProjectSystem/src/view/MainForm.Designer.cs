@@ -60,6 +60,7 @@ namespace InnoProjectSystem.src.view
             this.PersonInfoItem.Name = "PersonInfoItem";
             this.PersonInfoItem.Size = new System.Drawing.Size(83, 24);
             this.PersonInfoItem.Text = "个人信息";
+            this.PersonInfoItem.Click += new System.EventHandler(this.PersonInfoItem_Click);
             // 
             // 项目管理ToolStripMenuItem
             // 
@@ -74,19 +75,19 @@ namespace InnoProjectSystem.src.view
             // ProjectQandCItem
             // 
             this.ProjectQandCItem.Name = "ProjectQandCItem";
-            this.ProjectQandCItem.Size = new System.Drawing.Size(224, 26);
+            this.ProjectQandCItem.Size = new System.Drawing.Size(188, 26);
             this.ProjectQandCItem.Text = "项目查询/修改";
             // 
             // ProjectAddItem
             // 
             this.ProjectAddItem.Name = "ProjectAddItem";
-            this.ProjectAddItem.Size = new System.Drawing.Size(224, 26);
+            this.ProjectAddItem.Size = new System.Drawing.Size(188, 26);
             this.ProjectAddItem.Text = "项目添加";
             // 
             // ProjectTypeItem
             // 
             this.ProjectTypeItem.Name = "ProjectTypeItem";
-            this.ProjectTypeItem.Size = new System.Drawing.Size(224, 26);
+            this.ProjectTypeItem.Size = new System.Drawing.Size(188, 26);
             this.ProjectTypeItem.Text = "项目类型管理";
             // 
             // 人员管理ToolStripMenuItem
@@ -101,13 +102,13 @@ namespace InnoProjectSystem.src.view
             // PeopleQandCItem
             // 
             this.PeopleQandCItem.Name = "PeopleQandCItem";
-            this.PeopleQandCItem.Size = new System.Drawing.Size(224, 26);
+            this.PeopleQandCItem.Size = new System.Drawing.Size(188, 26);
             this.PeopleQandCItem.Text = "人员查询/修改";
             // 
             // PeopleAddItem
             // 
             this.PeopleAddItem.Name = "PeopleAddItem";
-            this.PeopleAddItem.Size = new System.Drawing.Size(224, 26);
+            this.PeopleAddItem.Size = new System.Drawing.Size(188, 26);
             this.PeopleAddItem.Text = "人员添加";
             // 
             // MainPanel
