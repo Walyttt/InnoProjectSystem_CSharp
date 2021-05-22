@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InnoProjectSystem.src.models
 {
-    class ProjectType
+    public class ProjectType
     {
         private int ptId;
         private string ptName;

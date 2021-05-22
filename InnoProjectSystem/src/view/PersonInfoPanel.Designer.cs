@@ -121,6 +121,7 @@ namespace InnoProjectSystem.src.view
             this.AckBtn.TabIndex = 8;
             this.AckBtn.Text = "确认修改";
             this.AckBtn.UseVisualStyleBackColor = true;
+            this.AckBtn.Click += new System.EventHandler(this.AckBtn_Click);
             // 
             // PersonInfoPanel
             // 
