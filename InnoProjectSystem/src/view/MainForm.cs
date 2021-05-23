@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using InnoProjectSystem.src.models;
+using InnoProjectSystem.src.view.Panel;
 
 namespace InnoProjectSystem.src.view
 {
@@ -24,6 +25,12 @@ namespace InnoProjectSystem.src.view
         {
             MainPanel.Controls.Clear();
             MainPanel.Controls.Add(new PersonInfoPanel(this.user));
+        }
+
+        private void PeopleQandCItem_Click(object sender, EventArgs e)
+        {
+            MainPanel.Controls.Clear();
+            MainPanel.Controls.Add(new FacultyQueryAndAlterPanel());
         }
     }
 }

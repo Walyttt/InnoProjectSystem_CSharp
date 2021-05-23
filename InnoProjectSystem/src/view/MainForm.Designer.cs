@@ -102,13 +102,14 @@ namespace InnoProjectSystem.src.view
             // PeopleQandCItem
             // 
             this.PeopleQandCItem.Name = "PeopleQandCItem";
-            this.PeopleQandCItem.Size = new System.Drawing.Size(188, 26);
+            this.PeopleQandCItem.Size = new System.Drawing.Size(224, 26);
             this.PeopleQandCItem.Text = "人员查询/修改";
+            this.PeopleQandCItem.Click += new System.EventHandler(this.PeopleQandCItem_Click);
             // 
             // PeopleAddItem
             // 
             this.PeopleAddItem.Name = "PeopleAddItem";
-            this.PeopleAddItem.Size = new System.Drawing.Size(188, 26);
+            this.PeopleAddItem.Size = new System.Drawing.Size(224, 26);
             this.PeopleAddItem.Text = "人员添加";
             // 
             // MainPanel
