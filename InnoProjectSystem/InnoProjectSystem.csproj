@@ -84,10 +84,10 @@
     <Compile Include="src\view\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="src\view\PersonInfoPanel.cs">
+    <Compile Include="src\view\Panel\PersonInfoPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="src\view\PersonInfoPanel.Designer.cs">
+    <Compile Include="src\view\Panel\PersonInfoPanel.Designer.cs">
       <DependentUpon>PersonInfoPanel.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="src\view\LoginForm.resx">
@@ -105,7 +105,7 @@
     <EmbeddedResource Include="src\view\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="src\view\PersonInfoPanel.resx">
+    <EmbeddedResource Include="src\view\Panel\PersonInfoPanel.resx">
       <DependentUpon>PersonInfoPanel.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.manifest" />
