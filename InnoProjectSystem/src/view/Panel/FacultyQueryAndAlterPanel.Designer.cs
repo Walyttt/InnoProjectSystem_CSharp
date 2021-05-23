@@ -29,7 +29,6 @@ namespace InnoProjectSystem.src.view.Panel
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.CampusLabel = new System.Windows.Forms.Label();
             this.CampusCBox = new System.Windows.Forms.ComboBox();
             this.CollegeCBox = new System.Windows.Forms.ComboBox();
