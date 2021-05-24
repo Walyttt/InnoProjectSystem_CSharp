@@ -39,19 +39,20 @@ namespace InnoProjectSystem.src.view.Panel
             this.NameLabel = new System.Windows.Forms.Label();
             this.IdTxt = new System.Windows.Forms.TextBox();
             this.IdLabel = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.QueryBtn = new System.Windows.Forms.Button();
+            this.FacultyView = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.FacultyView)).BeginInit();
             this.SuspendLayout();
             // 
             // CollegeCBox
             // 
-            this.CollegeCBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.CollegeCBox.Font = new System.Drawing.Font("宋体", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.CollegeCBox.FormattingEnabled = true;
             this.CollegeCBox.Location = new System.Drawing.Point(261, 49);
             this.CollegeCBox.Name = "CollegeCBox";
-            this.CollegeCBox.Size = new System.Drawing.Size(161, 28);
+            this.CollegeCBox.Size = new System.Drawing.Size(161, 26);
             this.CollegeCBox.TabIndex = 3;
+            this.CollegeCBox.ValueMember = "ColNo";
             // 
             // CollegeLabel
             // 
@@ -75,11 +76,14 @@ namespace InnoProjectSystem.src.view.Panel
             // 
             // GenderCBox
             // 
-            this.GenderCBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.GenderCBox.Font = new System.Drawing.Font("宋体", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.GenderCBox.FormattingEnabled = true;
+            this.GenderCBox.Items.AddRange(new object[] {
+            "男",
+            "女"});
             this.GenderCBox.Location = new System.Drawing.Point(635, 49);
             this.GenderCBox.Name = "GenderCBox";
-            this.GenderCBox.Size = new System.Drawing.Size(161, 28);
+            this.GenderCBox.Size = new System.Drawing.Size(161, 26);
             this.GenderCBox.TabIndex = 5;
             // 
             // GenderLabel
@@ -94,18 +98,18 @@ namespace InnoProjectSystem.src.view.Panel
             // 
             // TitleTxt
             // 
-            this.TitleTxt.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.TitleTxt.Font = new System.Drawing.Font("宋体", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.TitleTxt.Location = new System.Drawing.Point(261, 114);
             this.TitleTxt.Name = "TitleTxt";
-            this.TitleTxt.Size = new System.Drawing.Size(161, 30);
+            this.TitleTxt.Size = new System.Drawing.Size(161, 28);
             this.TitleTxt.TabIndex = 7;
             // 
             // NameTxt
             // 
-            this.NameTxt.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.NameTxt.Font = new System.Drawing.Font("宋体", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.NameTxt.Location = new System.Drawing.Point(635, 114);
             this.NameTxt.Name = "NameTxt";
-            this.NameTxt.Size = new System.Drawing.Size(161, 30);
+            this.NameTxt.Size = new System.Drawing.Size(161, 28);
             this.NameTxt.TabIndex = 9;
             // 
             // NameLabel
@@ -120,10 +124,10 @@ namespace InnoProjectSystem.src.view.Panel
             // 
             // IdTxt
             // 
-            this.IdTxt.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.IdTxt.Font = new System.Drawing.Font("宋体", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.IdTxt.Location = new System.Drawing.Point(261, 179);
             this.IdTxt.Name = "IdTxt";
-            this.IdTxt.Size = new System.Drawing.Size(161, 30);
+            this.IdTxt.Size = new System.Drawing.Size(161, 28);
             this.IdTxt.TabIndex = 11;
             // 
             // IdLabel
@@ -136,35 +140,35 @@ namespace InnoProjectSystem.src.view.Panel
             this.IdLabel.TabIndex = 10;
             this.IdLabel.Text = "职 工 号：";
             // 
-            // button1
+            // QueryBtn
             // 
-            this.button1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button1.Location = new System.Drawing.Point(635, 184);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(132, 29);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "查询";
-            this.button1.UseVisualStyleBackColor = true;
+            this.QueryBtn.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.QueryBtn.Location = new System.Drawing.Point(635, 184);
+            this.QueryBtn.Name = "QueryBtn";
+            this.QueryBtn.Size = new System.Drawing.Size(132, 29);
+            this.QueryBtn.TabIndex = 12;
+            this.QueryBtn.Text = "查询";
+            this.QueryBtn.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // FacultyView
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(114, 281);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 27;
-            this.dataGridView1.Size = new System.Drawing.Size(767, 267);
-            this.dataGridView1.TabIndex = 13;
+            this.FacultyView.AllowUserToAddRows = false;
+            this.FacultyView.AllowUserToDeleteRows = false;
+            this.FacultyView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.FacultyView.Location = new System.Drawing.Point(114, 240);
+            this.FacultyView.Name = "FacultyView";
+            this.FacultyView.ReadOnly = true;
+            this.FacultyView.RowHeadersWidth = 51;
+            this.FacultyView.RowTemplate.Height = 27;
+            this.FacultyView.Size = new System.Drawing.Size(784, 308);
+            this.FacultyView.TabIndex = 13;
             // 
             // FacultyQueryAndAlterPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.FacultyView);
+            this.Controls.Add(this.QueryBtn);
             this.Controls.Add(this.IdTxt);
             this.Controls.Add(this.IdLabel);
             this.Controls.Add(this.NameTxt);
@@ -178,7 +182,7 @@ namespace InnoProjectSystem.src.view.Panel
             this.Name = "FacultyQueryAndAlterPanel";
             this.Size = new System.Drawing.Size(979, 584);
             this.Load += new System.EventHandler(this.FacultyQueryAndAlterPanel_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FacultyView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -195,7 +199,7 @@ namespace InnoProjectSystem.src.view.Panel
         private System.Windows.Forms.Label NameLabel;
         private System.Windows.Forms.TextBox IdTxt;
         private System.Windows.Forms.Label IdLabel;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button QueryBtn;
+        private System.Windows.Forms.DataGridView FacultyView;
     }
 }
