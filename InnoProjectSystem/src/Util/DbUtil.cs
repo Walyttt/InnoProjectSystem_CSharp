@@ -12,6 +12,8 @@ namespace InnoProjectSystem.src.Util
 {
     class DbUtil
     {
+
+        /*用于创建数据库连接，返回SqlConnection*/
         public static SqlConnection getConnection()
         {
             string strCnn = ConfigurationManager.ConnectionStrings["InnoProjectCnnString"].ConnectionString;

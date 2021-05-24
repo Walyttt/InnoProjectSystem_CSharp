@@ -29,8 +29,6 @@ namespace InnoProjectSystem.src.view.Panel
         /// </summary>
         private void InitializeComponent()
         {
-            this.CampusLabel = new System.Windows.Forms.Label();
-            this.CampusCBox = new System.Windows.Forms.ComboBox();
             this.CollegeCBox = new System.Windows.Forms.ComboBox();
             this.CollegeLabel = new System.Windows.Forms.Label();
             this.TitleLabel = new System.Windows.Forms.Label();
@@ -41,33 +39,16 @@ namespace InnoProjectSystem.src.view.Panel
             this.NameLabel = new System.Windows.Forms.Label();
             this.IdTxt = new System.Windows.Forms.TextBox();
             this.IdLabel = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // CampusLabel
-            // 
-            this.CampusLabel.AutoSize = true;
-            this.CampusLabel.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.CampusLabel.Location = new System.Drawing.Point(156, 61);
-            this.CampusLabel.Name = "CampusLabel";
-            this.CampusLabel.Size = new System.Drawing.Size(99, 20);
-            this.CampusLabel.TabIndex = 0;
-            this.CampusLabel.Text = "校   区：";
-            // 
-            // CampusCBox
-            // 
-            this.CampusCBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.CampusCBox.FormattingEnabled = true;
-            this.CampusCBox.Location = new System.Drawing.Point(261, 58);
-            this.CampusCBox.Name = "CampusCBox";
-            this.CampusCBox.Size = new System.Drawing.Size(161, 28);
-            this.CampusCBox.TabIndex = 1;
-            this.CampusCBox.ValueMember = "CamNo";
             // 
             // CollegeCBox
             // 
             this.CollegeCBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.CollegeCBox.FormattingEnabled = true;
-            this.CollegeCBox.Location = new System.Drawing.Point(635, 58);
+            this.CollegeCBox.Location = new System.Drawing.Point(261, 49);
             this.CollegeCBox.Name = "CollegeCBox";
             this.CollegeCBox.Size = new System.Drawing.Size(161, 28);
             this.CollegeCBox.TabIndex = 3;
@@ -76,7 +57,7 @@ namespace InnoProjectSystem.src.view.Panel
             // 
             this.CollegeLabel.AutoSize = true;
             this.CollegeLabel.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.CollegeLabel.Location = new System.Drawing.Point(530, 61);
+            this.CollegeLabel.Location = new System.Drawing.Point(156, 52);
             this.CollegeLabel.Name = "CollegeLabel";
             this.CollegeLabel.Size = new System.Drawing.Size(99, 20);
             this.CollegeLabel.TabIndex = 2;
@@ -86,7 +67,7 @@ namespace InnoProjectSystem.src.view.Panel
             // 
             this.TitleLabel.AutoSize = true;
             this.TitleLabel.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.TitleLabel.Location = new System.Drawing.Point(530, 124);
+            this.TitleLabel.Location = new System.Drawing.Point(156, 119);
             this.TitleLabel.Name = "TitleLabel";
             this.TitleLabel.Size = new System.Drawing.Size(99, 20);
             this.TitleLabel.TabIndex = 6;
@@ -96,7 +77,7 @@ namespace InnoProjectSystem.src.view.Panel
             // 
             this.GenderCBox.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.GenderCBox.FormattingEnabled = true;
-            this.GenderCBox.Location = new System.Drawing.Point(261, 121);
+            this.GenderCBox.Location = new System.Drawing.Point(635, 49);
             this.GenderCBox.Name = "GenderCBox";
             this.GenderCBox.Size = new System.Drawing.Size(161, 28);
             this.GenderCBox.TabIndex = 5;
@@ -105,7 +86,7 @@ namespace InnoProjectSystem.src.view.Panel
             // 
             this.GenderLabel.AutoSize = true;
             this.GenderLabel.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.GenderLabel.Location = new System.Drawing.Point(156, 124);
+            this.GenderLabel.Location = new System.Drawing.Point(530, 52);
             this.GenderLabel.Name = "GenderLabel";
             this.GenderLabel.Size = new System.Drawing.Size(99, 20);
             this.GenderLabel.TabIndex = 4;
@@ -114,7 +95,7 @@ namespace InnoProjectSystem.src.view.Panel
             // TitleTxt
             // 
             this.TitleTxt.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.TitleTxt.Location = new System.Drawing.Point(635, 119);
+            this.TitleTxt.Location = new System.Drawing.Point(261, 114);
             this.TitleTxt.Name = "TitleTxt";
             this.TitleTxt.Size = new System.Drawing.Size(161, 30);
             this.TitleTxt.TabIndex = 7;
@@ -122,7 +103,7 @@ namespace InnoProjectSystem.src.view.Panel
             // NameTxt
             // 
             this.NameTxt.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.NameTxt.Location = new System.Drawing.Point(261, 184);
+            this.NameTxt.Location = new System.Drawing.Point(635, 114);
             this.NameTxt.Name = "NameTxt";
             this.NameTxt.Size = new System.Drawing.Size(161, 30);
             this.NameTxt.TabIndex = 9;
@@ -131,7 +112,7 @@ namespace InnoProjectSystem.src.view.Panel
             // 
             this.NameLabel.AutoSize = true;
             this.NameLabel.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.NameLabel.Location = new System.Drawing.Point(156, 189);
+            this.NameLabel.Location = new System.Drawing.Point(530, 119);
             this.NameLabel.Name = "NameLabel";
             this.NameLabel.Size = new System.Drawing.Size(99, 20);
             this.NameLabel.TabIndex = 8;
@@ -140,7 +121,7 @@ namespace InnoProjectSystem.src.view.Panel
             // IdTxt
             // 
             this.IdTxt.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.IdTxt.Location = new System.Drawing.Point(635, 184);
+            this.IdTxt.Location = new System.Drawing.Point(261, 179);
             this.IdTxt.Name = "IdTxt";
             this.IdTxt.Size = new System.Drawing.Size(161, 30);
             this.IdTxt.TabIndex = 11;
@@ -149,16 +130,41 @@ namespace InnoProjectSystem.src.view.Panel
             // 
             this.IdLabel.AutoSize = true;
             this.IdLabel.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.IdLabel.Location = new System.Drawing.Point(530, 189);
+            this.IdLabel.Location = new System.Drawing.Point(156, 184);
             this.IdLabel.Name = "IdLabel";
             this.IdLabel.Size = new System.Drawing.Size(109, 20);
             this.IdLabel.TabIndex = 10;
             this.IdLabel.Text = "职 工 号：";
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button1.Location = new System.Drawing.Point(635, 184);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(132, 29);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "查询";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(114, 281);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 27;
+            this.dataGridView1.Size = new System.Drawing.Size(767, 267);
+            this.dataGridView1.TabIndex = 13;
+            // 
             // FacultyQueryAndAlterPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.IdTxt);
             this.Controls.Add(this.IdLabel);
             this.Controls.Add(this.NameTxt);
@@ -169,19 +175,16 @@ namespace InnoProjectSystem.src.view.Panel
             this.Controls.Add(this.GenderLabel);
             this.Controls.Add(this.CollegeCBox);
             this.Controls.Add(this.CollegeLabel);
-            this.Controls.Add(this.CampusCBox);
-            this.Controls.Add(this.CampusLabel);
             this.Name = "FacultyQueryAndAlterPanel";
             this.Size = new System.Drawing.Size(979, 584);
+            this.Load += new System.EventHandler(this.FacultyQueryAndAlterPanel_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label CampusLabel;
-        private System.Windows.Forms.ComboBox CampusCBox;
         private System.Windows.Forms.ComboBox CollegeCBox;
         private System.Windows.Forms.Label CollegeLabel;
         private System.Windows.Forms.Label TitleLabel;
@@ -192,5 +195,7 @@ namespace InnoProjectSystem.src.view.Panel
         private System.Windows.Forms.Label NameLabel;
         private System.Windows.Forms.TextBox IdTxt;
         private System.Windows.Forms.Label IdLabel;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

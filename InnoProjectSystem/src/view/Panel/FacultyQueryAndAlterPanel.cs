@@ -16,5 +16,10 @@ namespace InnoProjectSystem.src.view.Panel
         {
             InitializeComponent();
         }
+
+        private void FacultyQueryAndAlterPanel_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
