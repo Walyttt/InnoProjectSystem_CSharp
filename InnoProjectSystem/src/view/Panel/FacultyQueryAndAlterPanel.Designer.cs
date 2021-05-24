@@ -79,6 +79,7 @@ namespace InnoProjectSystem.src.view.Panel
             this.GenderCBox.Font = new System.Drawing.Font("宋体", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.GenderCBox.FormattingEnabled = true;
             this.GenderCBox.Items.AddRange(new object[] {
+            "",
             "男",
             "女"});
             this.GenderCBox.Location = new System.Drawing.Point(635, 49);
@@ -149,6 +150,7 @@ namespace InnoProjectSystem.src.view.Panel
             this.QueryBtn.TabIndex = 12;
             this.QueryBtn.Text = "查询";
             this.QueryBtn.UseVisualStyleBackColor = true;
+            this.QueryBtn.Click += new System.EventHandler(this.QueryBtn_Click);
             // 
             // FacultyView
             // 

@@ -42,5 +42,11 @@ namespace InnoProjectSystem.src.view.Panel
             this.CollegeCBox.DisplayMember = "ColName";
             this.CollegeCBox.ValueMember = "ColNo";
         }
+
+        /*查询按钮处理*/
+        private void QueryBtn_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
