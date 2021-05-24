@@ -46,6 +46,8 @@ namespace InnoProjectSystem.src.view.Panel
             // 
             // CollegeCBox
             // 
+            this.CollegeCBox.DisplayMember = "ColNo";
+            this.CollegeCBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CollegeCBox.Font = new System.Drawing.Font("宋体", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.CollegeCBox.FormattingEnabled = true;
             this.CollegeCBox.Location = new System.Drawing.Point(261, 49);
@@ -76,6 +78,7 @@ namespace InnoProjectSystem.src.view.Panel
             // 
             // GenderCBox
             // 
+            this.GenderCBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.GenderCBox.Font = new System.Drawing.Font("宋体", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.GenderCBox.FormattingEnabled = true;
             this.GenderCBox.Items.AddRange(new object[] {

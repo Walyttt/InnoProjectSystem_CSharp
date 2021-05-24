@@ -46,7 +46,51 @@ namespace InnoProjectSystem.src.view.Panel
         /*查询按钮处理*/
         private void QueryBtn_Click(object sender, EventArgs e)
         {
-            
+            //构建查询语句
+            string queryCmd = "Select FNo, FName, ColName, FGender, FTitle, FEmail " +
+                "From Faculty, College " +
+                "Where Faculty.ColNo = College.ColNo";
+            if(CollegeCBox.SelectedValue != String.Empty)
+            {
+                queryCmd += (" and Faculty.ColNo='" + CollegeCBox.SelectedValue.ToString() + "'");
+            }
+            if(GenderCBox.SelectedItem != null && GenderCBox.SelectedItem.ToString() != String.Empty)
+            {
+                queryCmd += (" and FGender='" + GenderCBox.SelectedItem.ToString() + "'");
+            }
+            if(TitleTxt.Text != String.Empty)
+            {
+                queryCmd += (" and FTitle like '%" + TitleTxt.Text.ToString() + "%'");
+            }
+            if(NameTxt.Text != String.Empty)
+            {
+                queryCmd += (" and FName like '%" + NameTxt.Text.ToString() + "%'");
+            }
+            if (IdTxt.Text != String.Empty)
+            {
+                queryCmd += (" and FNo like '%" + IdTxt.Text.ToString() + "%'");
+            }
+
+            SqlDataAdapter FacultyAdapter = new SqlDataAdapter(queryCmd, this.sqlConnection);
+            this.FacultyTable.Clear();
+            FacultyAdapter.Fill(this.FacultyTable);
+            this.FacultyView.DataSource = this.FacultyTable;
+
+            string[] vs =
+            {
+                "员工号",
+                "姓名",
+                "院系单位",
+                "性别",
+                "职称",
+                "电子邮箱"
+            };
+            for(int i=0; i < 6; i++)
+            {
+                this.FacultyView.Columns[i].HeaderText = vs[i];
+            }
+
+            return;
         }
     }
 }
