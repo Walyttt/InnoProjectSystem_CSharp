@@ -111,6 +111,7 @@ namespace InnoProjectSystem.src.view
             this.PeopleAddItem.Name = "PeopleAddItem";
             this.PeopleAddItem.Size = new System.Drawing.Size(224, 26);
             this.PeopleAddItem.Text = "人员添加";
+            this.PeopleAddItem.Click += new System.EventHandler(this.PeopleAddItem_Click);
             // 
             // MainPanel
             // 
