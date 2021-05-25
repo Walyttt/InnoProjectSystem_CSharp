@@ -39,8 +39,8 @@ namespace InnoProjectSystem.src.view.Panel
             this.GenderLabel = new System.Windows.Forms.Label();
             this.CollegeCBox = new System.Windows.Forms.ComboBox();
             this.CollegeLabel = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.EmailTxt = new System.Windows.Forms.TextBox();
+            this.EmailLabel = new System.Windows.Forms.Label();
             this.AckBtn = new System.Windows.Forms.Button();
             this.RsBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -105,7 +105,6 @@ namespace InnoProjectSystem.src.view.Panel
             this.GenderCBox.Font = new System.Drawing.Font("宋体", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.GenderCBox.FormattingEnabled = true;
             this.GenderCBox.Items.AddRange(new object[] {
-            "",
             "男",
             "女"});
             this.GenderCBox.Location = new System.Drawing.Point(432, 162);
@@ -145,23 +144,23 @@ namespace InnoProjectSystem.src.view.Panel
             this.CollegeLabel.TabIndex = 12;
             this.CollegeLabel.Text = "学   院：";
             // 
-            // textBox1
+            // EmailTxt
             // 
-            this.textBox1.Font = new System.Drawing.Font("宋体", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox1.Location = new System.Drawing.Point(432, 355);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(292, 28);
-            this.textBox1.TabIndex = 23;
+            this.EmailTxt.Font = new System.Drawing.Font("宋体", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.EmailTxt.Location = new System.Drawing.Point(432, 355);
+            this.EmailTxt.Name = "EmailTxt";
+            this.EmailTxt.Size = new System.Drawing.Size(292, 28);
+            this.EmailTxt.TabIndex = 23;
             // 
-            // label1
+            // EmailLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(327, 360);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 20);
-            this.label1.TabIndex = 22;
-            this.label1.Text = "电子邮箱：";
+            this.EmailLabel.AutoSize = true;
+            this.EmailLabel.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.EmailLabel.Location = new System.Drawing.Point(327, 360);
+            this.EmailLabel.Name = "EmailLabel";
+            this.EmailLabel.Size = new System.Drawing.Size(109, 20);
+            this.EmailLabel.TabIndex = 22;
+            this.EmailLabel.Text = "电子邮箱：";
             // 
             // AckBtn
             // 
@@ -172,6 +171,7 @@ namespace InnoProjectSystem.src.view.Panel
             this.AckBtn.TabIndex = 24;
             this.AckBtn.Text = "添  加";
             this.AckBtn.UseVisualStyleBackColor = true;
+            this.AckBtn.Click += new System.EventHandler(this.AckBtn_Click);
             // 
             // RsBtn
             // 
@@ -182,6 +182,7 @@ namespace InnoProjectSystem.src.view.Panel
             this.RsBtn.TabIndex = 25;
             this.RsBtn.Text = "重  置";
             this.RsBtn.UseVisualStyleBackColor = true;
+            this.RsBtn.Click += new System.EventHandler(this.RsBtn_Click);
             // 
             // FacultyAddPanel
             // 
@@ -189,8 +190,8 @@ namespace InnoProjectSystem.src.view.Panel
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.RsBtn);
             this.Controls.Add(this.AckBtn);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.EmailTxt);
+            this.Controls.Add(this.EmailLabel);
             this.Controls.Add(this.IdTxt);
             this.Controls.Add(this.IdLabel);
             this.Controls.Add(this.NameTxt);
@@ -203,6 +204,7 @@ namespace InnoProjectSystem.src.view.Panel
             this.Controls.Add(this.CollegeLabel);
             this.Name = "FacultyAddPanel";
             this.Size = new System.Drawing.Size(979, 584);
+            this.Load += new System.EventHandler(this.FacultyAddPanel_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -220,8 +222,8 @@ namespace InnoProjectSystem.src.view.Panel
         private System.Windows.Forms.Label GenderLabel;
         private System.Windows.Forms.ComboBox CollegeCBox;
         private System.Windows.Forms.Label CollegeLabel;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox EmailTxt;
+        private System.Windows.Forms.Label EmailLabel;
         private System.Windows.Forms.Button AckBtn;
         private System.Windows.Forms.Button RsBtn;
     }
