@@ -21,7 +21,7 @@ namespace InnoProjectSystem.src.models
         {
         }
 
-        public Faculty(string fNo = null, string fName = null, string fGender = null, string fTitle = null, string fCollege = null, string fEmail = null)
+        public Faculty(string fNo = "", string fName = "", string fGender = "", string fTitle = "", string fCollege = "", string fEmail = "")
         {
             this.FNo = fNo;
             this.FName = fName;
@@ -48,7 +48,21 @@ namespace InnoProjectSystem.src.models
             SqlCommand cmd = new SqlCommand(cmdTxt, cnn);
             cmd.Parameters.AddWithValue("@fno", fno);
 
-            cmd.ExecuteNonQuery();
+            try
+            {
+                cnn.Open();
+                cmd.ExecuteNonQuery();
+                cnn.Close();
+            }
+            catch(Exception e)
+            {
+                ;
+            }
+            finally
+            {
+                if (cnn.State == System.Data.ConnectionState.Open)
+                    cnn.Close();
+            }
             return;
         } 
     }
