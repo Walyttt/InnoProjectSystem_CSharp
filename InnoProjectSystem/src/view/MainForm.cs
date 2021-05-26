@@ -38,5 +38,11 @@ namespace InnoProjectSystem.src.view
             MainPanel.Controls.Clear();
             MainPanel.Controls.Add(new FacultyAddPanel());
         }
+
+        private void ProjectAddItem_Click(object sender, EventArgs e)
+        {
+            MainPanel.Controls.Clear();
+            MainPanel.Controls.Add(new ProjectAddPanel());
+        }
     }
 }

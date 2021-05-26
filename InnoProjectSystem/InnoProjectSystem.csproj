@@ -108,6 +108,12 @@
     <Compile Include="src\view\Panel\PersonInfoPanel.Designer.cs">
       <DependentUpon>PersonInfoPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="src\view\Panel\ProjectAddPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="src\view\Panel\ProjectAddPanel.Designer.cs">
+      <DependentUpon>ProjectAddPanel.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="src\view\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -134,6 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="src\view\Panel\PersonInfoPanel.resx">
       <DependentUpon>PersonInfoPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\view\Panel\ProjectAddPanel.resx">
+      <DependentUpon>ProjectAddPanel.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.manifest" />
     <None Include="Properties\Settings.settings">

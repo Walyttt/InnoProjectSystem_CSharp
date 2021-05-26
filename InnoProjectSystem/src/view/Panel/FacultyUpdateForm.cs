@@ -32,8 +32,6 @@ namespace InnoProjectSystem.src.view.Panel
             SqlDataAdapter collegeAdapter = new SqlDataAdapter("select * from College", sqlConnection);
             collegeAdapter.Fill(CollegeTable);
 
-            DataRow newrow = CollegeTable.NewRow();    //多创建一空选项
-
             this.CollegeCBox.DataSource = CollegeTable;
             this.CollegeCBox.DisplayMember = "ColName";
             this.CollegeCBox.ValueMember = "ColNo";
