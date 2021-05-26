@@ -33,7 +33,7 @@ namespace InnoProjectSystem.src.view.Panel
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.RsBtn = new System.Windows.Forms.Button();
+            this.CancelBtn = new System.Windows.Forms.Button();
             this.AckBtn = new System.Windows.Forms.Button();
             this.EmailTxt = new System.Windows.Forms.TextBox();
             this.EmailLabel = new System.Windows.Forms.Label();
@@ -93,15 +93,16 @@ namespace InnoProjectSystem.src.view.Panel
             this.label1.TabIndex = 44;
             this.label1.Text = "*";
             // 
-            // RsBtn
+            // CancelBtn
             // 
-            this.RsBtn.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.RsBtn.Location = new System.Drawing.Point(446, 431);
-            this.RsBtn.Name = "RsBtn";
-            this.RsBtn.Size = new System.Drawing.Size(107, 32);
-            this.RsBtn.TabIndex = 43;
-            this.RsBtn.Text = "重  置";
-            this.RsBtn.UseVisualStyleBackColor = true;
+            this.CancelBtn.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.CancelBtn.Location = new System.Drawing.Point(446, 431);
+            this.CancelBtn.Name = "CancelBtn";
+            this.CancelBtn.Size = new System.Drawing.Size(107, 32);
+            this.CancelBtn.TabIndex = 43;
+            this.CancelBtn.Text = "取  消";
+            this.CancelBtn.UseVisualStyleBackColor = true;
+            this.CancelBtn.Click += new System.EventHandler(this.CancelBtn_Click);
             // 
             // AckBtn
             // 
@@ -112,6 +113,7 @@ namespace InnoProjectSystem.src.view.Panel
             this.AckBtn.TabIndex = 42;
             this.AckBtn.Text = "确  认";
             this.AckBtn.UseVisualStyleBackColor = true;
+            this.AckBtn.Click += new System.EventHandler(this.AckBtn_Click);
             // 
             // EmailTxt
             // 
@@ -240,7 +242,7 @@ namespace InnoProjectSystem.src.view.Panel
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.RsBtn);
+            this.Controls.Add(this.CancelBtn);
             this.Controls.Add(this.AckBtn);
             this.Controls.Add(this.EmailTxt);
             this.Controls.Add(this.EmailLabel);
@@ -256,6 +258,7 @@ namespace InnoProjectSystem.src.view.Panel
             this.Controls.Add(this.CollegeLabel);
             this.Name = "FacultyUpdateForm";
             this.Text = "FacultyUpdateForm";
+            this.Load += new System.EventHandler(this.FacultyUpdateForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -267,7 +270,7 @@ namespace InnoProjectSystem.src.view.Panel
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button RsBtn;
+        private System.Windows.Forms.Button CancelBtn;
         private System.Windows.Forms.Button AckBtn;
         private System.Windows.Forms.TextBox EmailTxt;
         private System.Windows.Forms.Label EmailLabel;

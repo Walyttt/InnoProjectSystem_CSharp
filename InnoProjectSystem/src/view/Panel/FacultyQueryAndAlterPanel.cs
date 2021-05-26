@@ -133,7 +133,36 @@ namespace InnoProjectSystem.src.view.Panel
         /*修改按钮处理事件*/
         private void UpdateBtn_Click(object sender, EventArgs e)
         {
+            //首先判断选中记录数目是否为1
+            if (this.FacultyView.SelectedRows.Count != 1)
+            {
+                MessageBox.Show("请选中一条记录");
+                return;
+            }
 
+            //构建faculty实体，传入修改界面
+            Faculty f = new Faculty();
+            f.FNo = FacultyView.SelectedRows[0].Cells[0].Value.ToString();
+            f.FName = FacultyView.SelectedRows[0].Cells[1].Value.ToString();
+            f.FCollege = FacultyView.SelectedRows[0].Cells[2].Value.ToString();
+            f.FGender = FacultyView.SelectedRows[0].Cells[3].Value.ToString();
+            if(FacultyView.SelectedRows[0].Cells[4].Value != null)
+            {
+                f.FTitle = FacultyView.SelectedRows[0].Cells[4].Value.ToString();
+            }
+            if (FacultyView.SelectedRows[0].Cells[5].Value != null)
+            {
+                f.FEmail = FacultyView.SelectedRows[0].Cells[5].Value.ToString();
+            }
+
+            //以对话框形式打开修改窗口
+            FacultyUpdateForm facultyUpdateForm = new FacultyUpdateForm(f);
+            facultyUpdateForm.StartPosition = FormStartPosition.CenterScreen;
+            facultyUpdateForm.ShowDialog();
+
+            //更新查询结果
+            this.DisplayData2View();
+            return;
         }
     }
 }

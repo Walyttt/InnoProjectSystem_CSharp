@@ -17,9 +17,6 @@ namespace InnoProjectSystem.src.models
 		private string fCollege;
 		private string fEmail;
 
-        public Faculty()
-        {
-        }
 
         public Faculty(string fNo = "", string fName = "", string fGender = "", string fTitle = "", string fCollege = "", string fEmail = "")
         {
