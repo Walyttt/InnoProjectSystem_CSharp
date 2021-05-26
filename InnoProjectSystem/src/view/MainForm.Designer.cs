@@ -77,6 +77,7 @@ namespace InnoProjectSystem.src.view
             this.ProjectQandCItem.Name = "ProjectQandCItem";
             this.ProjectQandCItem.Size = new System.Drawing.Size(224, 26);
             this.ProjectQandCItem.Text = "项目查询/修改";
+            this.ProjectQandCItem.Click += new System.EventHandler(this.ProjectQandCItem_Click);
             // 
             // ProjectAddItem
             // 

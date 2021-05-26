@@ -114,6 +114,12 @@
     <Compile Include="src\view\Panel\ProjectAddPanel.Designer.cs">
       <DependentUpon>ProjectAddPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="src\view\Panel\ProjectQueryAndAlter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="src\view\Panel\ProjectQueryAndAlter.Designer.cs">
+      <DependentUpon>ProjectQueryAndAlter.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="src\view\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -143,6 +149,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="src\view\Panel\ProjectAddPanel.resx">
       <DependentUpon>ProjectAddPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\view\Panel\ProjectQueryAndAlter.resx">
+      <DependentUpon>ProjectQueryAndAlter.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.manifest" />
     <None Include="Properties\Settings.settings">

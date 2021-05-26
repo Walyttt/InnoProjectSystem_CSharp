@@ -125,6 +125,12 @@ namespace InnoProjectSystem.src.view.Panel
             return;
         }
 
+        //更改院系单位时，同时更新负责人下拉框
+        private void CollegeCBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.FillFacultyCBox(CollegeCBox.SelectedValue.ToString());
+        }
+
         //填充院系单位下拉框
         private void FillCollegeCBox()
         {
@@ -200,5 +206,6 @@ namespace InnoProjectSystem.src.view.Panel
         {
             return Regex.IsMatch(value, @"^[1-9]\d*$");
         }
+
     }
 }

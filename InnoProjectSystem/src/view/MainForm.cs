@@ -44,5 +44,11 @@ namespace InnoProjectSystem.src.view
             MainPanel.Controls.Clear();
             MainPanel.Controls.Add(new ProjectAddPanel());
         }
+
+        private void ProjectQandCItem_Click(object sender, EventArgs e)
+        {
+            MainPanel.Controls.Clear();
+            MainPanel.Controls.Add(new ProjectQueryAndAlter());
+        }
     }
 }
