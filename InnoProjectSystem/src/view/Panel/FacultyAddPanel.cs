@@ -56,6 +56,13 @@ namespace InnoProjectSystem.src.view.Panel
                 return;
             }
 
+            //判断编号长度合适
+            if(this.IdTxt.Text.Length != 10)
+            {
+                MessageBox.Show("请输入10位正确编号");
+                return;
+            }
+            
             //判断FNo的唯一
             object flag = null;
             SqlConnection sqlConnection = DbUtil.getConnection();
@@ -77,9 +84,9 @@ namespace InnoProjectSystem.src.view.Panel
                 if (sqlConnection.State == ConnectionState.Open)
                     sqlConnection.Close();
             }
-            if(flag == null)
+            if(flag != null)
             {
-                MessageBox.Show("编号已被占用");
+                MessageBox.Show("编号已被使用");
                 return;
             }
 
@@ -89,18 +96,19 @@ namespace InnoProjectSystem.src.view.Panel
             cmd.Parameters.AddWithValue("@FNo", this.IdTxt.Text);
             cmd.Parameters.AddWithValue("@FName", this.NameTxt.Text);
             cmd.Parameters.AddWithValue("@FGender", this.GenderCBox.SelectedItem.ToString());
-            cmd.Parameters.AddWithValue("@ColNo", this.CollegeCBox.SelectedItem.ToString());
+            cmd.Parameters.AddWithValue("@ColNo", this.CollegeCBox.SelectedValue.ToString());
             cmd.Parameters.AddWithValue("@FTitle", this.TitleTxt.Text);
             cmd.Parameters.AddWithValue("@FEmail", this.EmailTxt.Text);
             try
             {
                 sqlConnection.Open();
-                cmd.ExecuteNonQuery();
+                if(cmd.ExecuteNonQuery() == 1)
+                    MessageBox.Show("添加成功！"); ;
                 sqlConnection.Close();
             }
             catch (Exception ex)
             {
-                ;
+                MessageBox.Show(ex.Message);;
             }
             finally
             {
