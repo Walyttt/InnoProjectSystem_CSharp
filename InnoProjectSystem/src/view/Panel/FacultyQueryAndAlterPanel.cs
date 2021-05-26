@@ -27,6 +27,7 @@ namespace InnoProjectSystem.src.view.Panel
             this.sqlConnection = DbUtil.getConnection();
         }
 
+        /*页面加载处理*/
         private void FacultyQueryAndAlterPanel_Load(object sender, EventArgs e)
         {
             //填充院系下拉框
@@ -127,6 +128,12 @@ namespace InnoProjectSystem.src.view.Panel
             //重新加载FacultyView
             DisplayData2View();
             return;
+        }
+
+        /*修改按钮处理事件*/
+        private void UpdateBtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

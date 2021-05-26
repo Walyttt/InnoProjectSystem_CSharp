@@ -96,6 +96,12 @@
     <Compile Include="src\view\Panel\FacultyQueryAndAlterPanel.Designer.cs">
       <DependentUpon>FacultyQueryAndAlterPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="src\view\Panel\FacultyUpdateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\view\Panel\FacultyUpdateForm.Designer.cs">
+      <DependentUpon>FacultyUpdateForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\view\Panel\PersonInfoPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -122,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="src\view\Panel\FacultyQueryAndAlterPanel.resx">
       <DependentUpon>FacultyQueryAndAlterPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\view\Panel\FacultyUpdateForm.resx">
+      <DependentUpon>FacultyUpdateForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\view\Panel\PersonInfoPanel.resx">
       <DependentUpon>PersonInfoPanel.cs</DependentUpon>

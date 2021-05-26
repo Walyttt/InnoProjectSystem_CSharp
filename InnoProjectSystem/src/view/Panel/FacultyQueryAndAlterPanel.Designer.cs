@@ -42,6 +42,7 @@ namespace InnoProjectSystem.src.view.Panel
             this.QueryBtn = new System.Windows.Forms.Button();
             this.FacultyView = new System.Windows.Forms.DataGridView();
             this.DeleteBtn = new System.Windows.Forms.Button();
+            this.UpdateBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.FacultyView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -148,7 +149,7 @@ namespace InnoProjectSystem.src.view.Panel
             // QueryBtn
             // 
             this.QueryBtn.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.QueryBtn.Location = new System.Drawing.Point(534, 180);
+            this.QueryBtn.Location = new System.Drawing.Point(635, 180);
             this.QueryBtn.Name = "QueryBtn";
             this.QueryBtn.Size = new System.Drawing.Size(132, 29);
             this.QueryBtn.TabIndex = 12;
@@ -162,7 +163,7 @@ namespace InnoProjectSystem.src.view.Panel
             this.FacultyView.AllowUserToDeleteRows = false;
             this.FacultyView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.FacultyView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.FacultyView.Location = new System.Drawing.Point(114, 240);
+            this.FacultyView.Location = new System.Drawing.Point(101, 227);
             this.FacultyView.Name = "FacultyView";
             this.FacultyView.ReadOnly = true;
             this.FacultyView.RowHeadersWidth = 70;
@@ -173,7 +174,7 @@ namespace InnoProjectSystem.src.view.Panel
             // DeleteBtn
             // 
             this.DeleteBtn.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DeleteBtn.Location = new System.Drawing.Point(734, 180);
+            this.DeleteBtn.Location = new System.Drawing.Point(290, 541);
             this.DeleteBtn.Name = "DeleteBtn";
             this.DeleteBtn.Size = new System.Drawing.Size(132, 29);
             this.DeleteBtn.TabIndex = 14;
@@ -181,10 +182,22 @@ namespace InnoProjectSystem.src.view.Panel
             this.DeleteBtn.UseVisualStyleBackColor = true;
             this.DeleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
             // 
+            // UpdateBtn
+            // 
+            this.UpdateBtn.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.UpdateBtn.Location = new System.Drawing.Point(565, 541);
+            this.UpdateBtn.Name = "UpdateBtn";
+            this.UpdateBtn.Size = new System.Drawing.Size(132, 29);
+            this.UpdateBtn.TabIndex = 15;
+            this.UpdateBtn.Text = "修 改";
+            this.UpdateBtn.UseVisualStyleBackColor = true;
+            this.UpdateBtn.Click += new System.EventHandler(this.UpdateBtn_Click);
+            // 
             // FacultyQueryAndAlterPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.UpdateBtn);
             this.Controls.Add(this.DeleteBtn);
             this.Controls.Add(this.FacultyView);
             this.Controls.Add(this.QueryBtn);
@@ -221,5 +234,6 @@ namespace InnoProjectSystem.src.view.Panel
         private System.Windows.Forms.Button QueryBtn;
         private System.Windows.Forms.DataGridView FacultyView;
         private System.Windows.Forms.Button DeleteBtn;
+        private System.Windows.Forms.Button UpdateBtn;
     }
 }
