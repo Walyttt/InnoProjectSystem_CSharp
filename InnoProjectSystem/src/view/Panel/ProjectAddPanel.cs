@@ -63,7 +63,7 @@ namespace InnoProjectSystem.src.view.Panel
             }
 
             //判断项目批次为正整数
-            if (this.IsPNumeric(this.GroupTxt.Text))
+            if (!this.IsPNumeric(this.GroupTxt.Text))
             {
                 MessageBox.Show("请输入正确的项目批次");
                 return;
@@ -97,7 +97,32 @@ namespace InnoProjectSystem.src.view.Panel
             }
 
             //开始添加
-
+            cmdTxt = "Insert into Project Values(@PNo, @PName, @FNo, @PTNo, @SubNo, @PGroup)";
+            cmd = new SqlCommand(cmdTxt, sqlConnection);
+            cmd.Parameters.AddWithValue("@PNo", this.IdTxt.Text);
+            cmd.Parameters.AddWithValue("@PName", this.NameTxt.Text);
+            cmd.Parameters.AddWithValue("@FNo", this.FacultyCBox.SelectedValue.ToString());
+            cmd.Parameters.AddWithValue("@PTNo", this.ProjectTypeCBox.SelectedValue.ToString());
+            cmd.Parameters.AddWithValue("@SubNo", this.SubjectCBox.SelectedValue.ToString());
+            cmd.Parameters.AddWithValue("@PGroup", int.Parse(this.GroupTxt.Text));
+            try
+            {
+                sqlConnection.Open();
+                if (cmd.ExecuteNonQuery() == 1)
+                    MessageBox.Show("添加成功！"); ;
+                sqlConnection.Close();
+                this.Reset();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message); ;
+            }
+            finally
+            {
+                if (sqlConnection.State == ConnectionState.Open)
+                    sqlConnection.Close();
+            }
+            return;
         }
 
         //填充院系单位下拉框
