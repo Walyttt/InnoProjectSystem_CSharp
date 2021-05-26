@@ -141,7 +141,7 @@ namespace InnoProjectSystem.src.view.Panel
             this.CollegeCBox.Name = "CollegeCBox";
             this.CollegeCBox.Size = new System.Drawing.Size(161, 23);
             this.CollegeCBox.TabIndex = 50;
-            this.CollegeCBox.SelectedIndexChanged += new System.EventHandler(this.CollegeCBox_SelectedIndexChanged);
+            this.CollegeCBox.SelectionChangeCommitted += new System.EventHandler(this.CollegeCBox_SelectionChangeCommitted);
             // 
             // FacultyCBox
             // 

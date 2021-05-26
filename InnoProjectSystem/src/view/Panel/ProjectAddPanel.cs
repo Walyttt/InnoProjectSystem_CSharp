@@ -102,7 +102,7 @@ namespace InnoProjectSystem.src.view.Panel
             cmd.Parameters.AddWithValue("@PNo", this.IdTxt.Text);
             cmd.Parameters.AddWithValue("@PName", this.NameTxt.Text);
             cmd.Parameters.AddWithValue("@FNo", this.FacultyCBox.SelectedValue.ToString());
-            cmd.Parameters.AddWithValue("@PTNo", this.ProjectTypeCBox.SelectedValue.ToString());
+            cmd.Parameters.AddWithValue("@PTNo", Convert.ToInt32(this.ProjectTypeCBox.SelectedValue));
             cmd.Parameters.AddWithValue("@SubNo", this.SubjectCBox.SelectedValue.ToString());
             cmd.Parameters.AddWithValue("@PGroup", int.Parse(this.GroupTxt.Text));
             try
@@ -126,9 +126,10 @@ namespace InnoProjectSystem.src.view.Panel
         }
 
         //更改院系单位时，同时更新负责人下拉框
-        private void CollegeCBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void CollegeCBox_SelectionChangeCommitted(object sender, EventArgs e)
         {
             this.FillFacultyCBox(CollegeCBox.SelectedValue.ToString());
+            FacultyCBox.SelectedItem = null;
         }
 
         //填充院系单位下拉框
@@ -152,7 +153,7 @@ namespace InnoProjectSystem.src.view.Panel
             string cmdTxt = "select * from Faculty";
             if(ColNo != String.Empty)
             {
-                cmdTxt += ("Where ColNo='" + ColNo + "'");
+                cmdTxt += (" Where ColNo='" + ColNo + "'");
             }
             SqlDataAdapter facultyAdapter = new SqlDataAdapter(cmdTxt, sqlConnection);
             facultyAdapter.Fill(FacultyTable);
