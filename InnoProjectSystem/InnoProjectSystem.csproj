@@ -114,6 +114,12 @@
     <Compile Include="src\view\Panel\ProjectAddPanel.Designer.cs">
       <DependentUpon>ProjectAddPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="src\view\Panel\ProjectTypePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="src\view\Panel\ProjectTypePanel.Designer.cs">
+      <DependentUpon>ProjectTypePanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\view\Panel\ProjectUpdateForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,6 +161,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="src\view\Panel\ProjectAddPanel.resx">
       <DependentUpon>ProjectAddPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\view\Panel\ProjectTypePanel.resx">
+      <DependentUpon>ProjectTypePanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\view\Panel\ProjectUpdateForm.resx">
       <DependentUpon>ProjectUpdateForm.cs</DependentUpon>

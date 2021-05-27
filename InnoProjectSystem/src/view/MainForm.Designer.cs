@@ -91,6 +91,7 @@ namespace InnoProjectSystem.src.view
             this.ProjectTypeItem.Name = "ProjectTypeItem";
             this.ProjectTypeItem.Size = new System.Drawing.Size(224, 26);
             this.ProjectTypeItem.Text = "项目类型管理";
+            this.ProjectTypeItem.Click += new System.EventHandler(this.ProjectTypeItem_Click);
             // 
             // 人员管理ToolStripMenuItem
             // 
