@@ -116,6 +116,64 @@ namespace InnoProjectSystem.src.view.Panel
             return;
         }
 
+        /*删除按钮事件*/
+        private void DeleteBtn_Click(object sender, EventArgs e)
+        {
+            //判断是否选中
+            if (this.ProjectView.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("未选中");
+                return;
+            }
+
+            if (MessageBox.Show("确认删除？", "提示", MessageBoxButtons.OKCancel) != DialogResult.OK)
+            {
+                return;
+            }
+
+            //选中，提取项目编号，开始删除
+            for (int i = 0; i < this.ProjectView.SelectedRows.Count; i++)
+            {
+                string pno = "";
+                pno = ProjectView.SelectedRows[i].Cells[0].Value.ToString();
+                Project.DeleteByPno(pno);
+            }
+
+            //重新加载ProjectView
+            DisplayData2View();
+            return;
+        }
+
+        /*修改按钮事件*/
+        private void UpdateBtn_Click(object sender, EventArgs e)
+        {
+            //首先判断选中记录数目是否为1
+            if (this.ProjectView.SelectedRows.Count != 1)
+            {
+                MessageBox.Show("请选中一条记录");
+                return;
+            }
+
+            //构建faculty实体，传入修改界面
+            Project project = new Project();
+            project.PNo = ProjectView.SelectedRows[0].Cells[0].Value.ToString();
+            project.PName = ProjectView.SelectedRows[0].Cells[1].Value.ToString();
+            project.ColName = ProjectView.SelectedRows[0].Cells[2].Value.ToString();
+            project.FName = ProjectView.SelectedRows[0].Cells[3].Value.ToString();
+            project.PtName = ProjectView.SelectedRows[0].Cells[4].Value.ToString();
+            project.SubName = ProjectView.SelectedRows[0].Cells[5].Value.ToString();
+            project.PGroup = Convert.ToInt32(ProjectView.SelectedRows[0].Cells[6].Value);
+
+            //以对话框形式打开修改窗口
+            ProjectUpdateForm projectUpdateForm = new ProjectUpdateForm(project);
+            projectUpdateForm.StartPosition = FormStartPosition.CenterScreen;
+            projectUpdateForm.ShowDialog();
+
+            //更新查询结果
+            this.DisplayData2View();
+            return;
+        }
+
 
         //填充院系单位下拉框
         private void FillCollegeCBox()

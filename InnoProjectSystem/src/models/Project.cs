@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
+using InnoProjectSystem.src.Util;
 
 namespace InnoProjectSystem.src.models
 {
@@ -38,5 +40,32 @@ namespace InnoProjectSystem.src.models
         public string SubName { get => subName; set => subName = value; }
         public string ColName { get => colName; set => colName = value; }
         public int PGroup { get => pGroup; set => pGroup = value; }
+
+
+        /*根据PNo删除数据库教师信息*/
+        public static void DeleteByPno(string pno)
+        {
+            string cmdTxt = "Delete From Project Where PNo=@pno";
+            SqlConnection cnn = DbUtil.getConnection();
+            SqlCommand cmd = new SqlCommand(cmdTxt, cnn);
+            cmd.Parameters.AddWithValue("@pno", pno);
+
+            try
+            {
+                cnn.Open();
+                cmd.ExecuteNonQuery();
+                cnn.Close();
+            }
+            catch (Exception e)
+            {
+                ;
+            }
+            finally
+            {
+                if (cnn.State == System.Data.ConnectionState.Open)
+                    cnn.Close();
+            }
+            return;
+        }
     }
 }
