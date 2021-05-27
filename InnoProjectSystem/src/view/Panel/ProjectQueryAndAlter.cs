@@ -24,14 +24,22 @@ namespace InnoProjectSystem.src.view.Panel
         /*查询事件处理*/
         private void QueryBtn_Click(object sender, EventArgs e)
         {
+            //首先对输入的批次进行验证
+            if (this.GroupTxt.Text != String.Empty && !this.IsPNumeric(this.GroupTxt.Text))
+            {
+                MessageBox.Show("请输入正确的项目批次");
+                return;
+            }
 
+            this.DisplayData2View();
+            return;
         }
 
         /*更改院系单位时，同时更新负责人下拉框*/
         private void CollegeCBox_SelectionChangeCommitted(object sender, EventArgs e)
         {
             this.FillFacultyCBox(CollegeCBox.SelectedValue.ToString());
-            FacultyCBox.SelectedItem = null;
+            FacultyCBox.SelectedIndex = 0;
         }
 
         private void ProjectQueryAndAlter_Load(object sender, EventArgs e)
@@ -49,47 +57,60 @@ namespace InnoProjectSystem.src.view.Panel
         private void DisplayData2View()
         {
             //构建查询语句
-            string queryCmd = "Select FNo, FName, ColName, FGender, FTitle, FEmail " +
-                "From Faculty, College " +
-                "Where Faculty.ColNo = College.ColNo";
-            if (CollegeCBox.SelectedValue != String.Empty)
+            string queryCmd = "Select PNo, PName, ColName, FName, PTName, SubName, PGroup " +
+                "From Faculty, College, Project, ProjectType, Subject " +
+                "Where Faculty.ColNo = College.ColNo " +
+                "and Project.FNo = Faculty.FNo " +
+                "and Project.PTNo = ProjectType.PTNo " +
+                "and Project.SubNo = Subject.SubNo";
+            if (this.NameTxt.Text != String.Empty)
             {
-                queryCmd += (" and Faculty.ColNo='" + CollegeCBox.SelectedValue.ToString() + "'");
+                queryCmd += (" and PName like '%" + this.NameTxt.Text + "%'");
             }
-            if (GenderCBox.SelectedItem != null && GenderCBox.SelectedItem.ToString() != String.Empty)
+            if (this.IdTxt.Text != String.Empty)
             {
-                queryCmd += (" and FGender='" + GenderCBox.SelectedItem.ToString() + "'");
+                queryCmd += (" and PNo like '%" + this.IdTxt.Text + "%'");
             }
-            if (TitleTxt.Text != String.Empty)
+            if(this.CollegeCBox.SelectedIndex != 0)
             {
-                queryCmd += (" and FTitle like '%" + TitleTxt.Text.ToString() + "%'");
+                queryCmd += (" and Faculty.ColNo='" + this.CollegeCBox.SelectedValue.ToString() + "'");
             }
-            if (NameTxt.Text != String.Empty)
+            if(this.FacultyCBox.SelectedIndex != 0)
             {
-                queryCmd += (" and FName like '%" + NameTxt.Text.ToString() + "%'");
+                queryCmd += (" and Project.FNo='" + this.FacultyCBox.SelectedValue.ToString() + "'");
             }
-            if (IdTxt.Text != String.Empty)
+            if(this.ProjectTypeCBox.SelectedIndex != 0)
             {
-                queryCmd += (" and FNo like '%" + IdTxt.Text.ToString() + "%'");
+                queryCmd += (" and Project.PTNo='" + this.ProjectTypeCBox.SelectedValue.ToString() + "'");
+            }
+            if(this.SubjectCBox.SelectedIndex != 0)
+            {
+                queryCmd += (" and Project.SubNo='" + this.SubjectCBox.SelectedValue.ToString() + "'");
+            }
+            if (this.GroupTxt.Text != String.Empty)
+            {
+                queryCmd += (" and PGroup=" + this.GroupTxt.Text);
             }
 
-            SqlDataAdapter FacultyAdapter = new SqlDataAdapter(queryCmd, this.sqlConnection);
-            this.FacultyTable.Clear();
-            FacultyAdapter.Fill(this.FacultyTable);
-            this.FacultyView.DataSource = this.FacultyTable;
+            SqlConnection sqlConnection = DbUtil.getConnection();
+            SqlDataAdapter ProjectAdapter = new SqlDataAdapter(queryCmd, sqlConnection);
+            DataTable ProjectTable = new DataTable();
+            ProjectAdapter.Fill(ProjectTable);
+            this.ProjectView.DataSource = ProjectTable;
 
             string[] vs =
             {
-                "员工号",
-                "姓名",
+                "项目号",
+                "项目名",
                 "院系单位",
-                "性别",
-                "职称",
-                "电子邮箱"
+                "负责人",
+                "项目类型",
+                "学科",
+                "批次"
             };
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < 7; i++)
             {
-                this.FacultyView.Columns[i].HeaderText = vs[i];
+                this.ProjectView.Columns[i].HeaderText = vs[i];
             }
 
             return;
@@ -179,10 +200,10 @@ namespace InnoProjectSystem.src.view.Panel
             this.IdTxt.Text = String.Empty;
             this.NameTxt.Text = String.Empty;
             this.GroupTxt.Text = String.Empty;
-            CollegeCBox.SelectedItem = null;
-            FacultyCBox.SelectedItem = null;
-            ProjectTypeCBox.SelectedItem = null;
-            SubjectCBox.SelectedItem = null;
+            CollegeCBox.SelectedIndex = 0;
+            FacultyCBox.SelectedIndex = 0;
+            ProjectTypeCBox.SelectedIndex = 0;
+            SubjectCBox.SelectedIndex = 0;
             return;
         }
 
