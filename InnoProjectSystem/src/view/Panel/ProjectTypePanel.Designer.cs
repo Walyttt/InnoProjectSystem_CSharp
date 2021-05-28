@@ -87,6 +87,7 @@ namespace InnoProjectSystem.src.view.Panel
             this.UpdateBtn.TabIndex = 4;
             this.UpdateBtn.Text = "修  改";
             this.UpdateBtn.UseVisualStyleBackColor = true;
+            this.UpdateBtn.Click += new System.EventHandler(this.UpdateBtn_Click);
             // 
             // PTDescLabel
             // 

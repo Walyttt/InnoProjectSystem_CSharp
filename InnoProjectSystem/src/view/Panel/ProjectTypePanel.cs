@@ -136,5 +136,10 @@ namespace InnoProjectSystem.src.view.Panel
             this.hasLoad = true;
             return;
         }
+
+        private void UpdateBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
