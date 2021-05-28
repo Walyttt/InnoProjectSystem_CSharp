@@ -65,6 +65,7 @@ namespace InnoProjectSystem.src.view.Panel
             this.AddBtn.TabIndex = 2;
             this.AddBtn.Text = "添  加";
             this.AddBtn.UseVisualStyleBackColor = true;
+            this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
             // DeleteBtn
             // 
@@ -75,6 +76,7 @@ namespace InnoProjectSystem.src.view.Panel
             this.DeleteBtn.TabIndex = 3;
             this.DeleteBtn.Text = "删  除";
             this.DeleteBtn.UseVisualStyleBackColor = true;
+            this.DeleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
             // 
             // UpdateBtn
             // 
