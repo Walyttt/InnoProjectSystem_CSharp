@@ -139,7 +139,19 @@ namespace InnoProjectSystem.src.view.Panel
 
         private void UpdateBtn_Click(object sender, EventArgs e)
         {
+            ProjectType projecttype = new ProjectType();
+            projecttype.PtId = Convert.ToInt32(this.PTNameLBox.SelectedValue);
+            projecttype.PtName = ((DataRowView)this.PTNameLBox.SelectedItem)["PTName"].ToString();
+            projecttype.PtDes = this.PTDescTxt.Text;
 
+            //以对话框形式打开添加窗口
+            ProjectTypeAlterForm projectpypeAlterForm = new ProjectTypeAlterForm(projecttype);
+            projectpypeAlterForm.StartPosition = FormStartPosition.CenterScreen;
+            projectpypeAlterForm.ShowDialog();
+
+            //重新加载类型名列表
+            this.loadPTName();
+            return;
         }
     }
 }

@@ -37,19 +37,26 @@ namespace InnoProjectSystem.src.models
 
         /*以下是Faculty方法*/
 
-        /*根据FNo删除数据库教师信息*/
+        /*根据FNo删除数据库教师信息，同时删除该教师负责的项目*/
         public static void DeleteByFno(string fno)
         {
-            string cmdTxt = "Delete From Faculty Where FNo=@fno";
-            SqlConnection cnn = DbUtil.getConnection();
-            SqlCommand cmd = new SqlCommand(cmdTxt, cnn);
-            cmd.Parameters.AddWithValue("@fno", fno);
+            string cmdTxt1 = "Delete From Project Where FNo=@fno";
+            string cmdTxt2 = "Delete From Faculty Where FNo=@fno";
+            SqlConnection cnn1 = DbUtil.getConnection();
+            SqlConnection cnn2 = DbUtil.getConnection();
+            SqlCommand cmd1 = new SqlCommand(cmdTxt1, cnn1);
+            SqlCommand cmd2 = new SqlCommand(cmdTxt2, cnn2);
+            cmd1.Parameters.AddWithValue("@fno", fno);
+            cmd1.Parameters.AddWithValue("@fno", fno);
 
             try
             {
-                cnn.Open();
-                cmd.ExecuteNonQuery();
-                cnn.Close();
+                cnn1.Open();
+                cnn2.Open();
+                cmd1.ExecuteNonQuery();
+                cmd2.ExecuteNonQuery();
+                cnn1.Close();
+                cnn2.Close();
             }
             catch(Exception e)
             {
@@ -57,8 +64,10 @@ namespace InnoProjectSystem.src.models
             }
             finally
             {
-                if (cnn.State == System.Data.ConnectionState.Open)
-                    cnn.Close();
+                if (cnn1.State == System.Data.ConnectionState.Open)
+                    cnn1.Close();
+                if (cnn2.State == System.Data.ConnectionState.Open)
+                    cnn2.Close();
             }
             return;
         } 

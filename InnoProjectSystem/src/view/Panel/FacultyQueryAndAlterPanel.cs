@@ -112,7 +112,7 @@ namespace InnoProjectSystem.src.view.Panel
                 return;
             }
 
-            if(MessageBox.Show("确认删除？", "提示", MessageBoxButtons.OKCancel) != DialogResult.OK)
+            if(MessageBox.Show("此操作会将该教师负责的所有项目同时删除，确认删除？", "提示", MessageBoxButtons.OKCancel) != DialogResult.OK)
             {
                 return;
             }

@@ -16,7 +16,7 @@ namespace InnoProjectSystem.src.models
         {
         }
 
-        public ProjectType(int ptId, string ptName, string ptDes=null)
+        public ProjectType(int ptId, string ptName, string ptDes)
         {
             this.PtId = ptId;
             this.PtName = ptName;

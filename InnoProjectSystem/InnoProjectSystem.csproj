@@ -120,6 +120,12 @@
     <Compile Include="src\view\Panel\ProjectTypeAddForm.Designer.cs">
       <DependentUpon>ProjectTypeAddForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="src\view\Panel\ProjectTypeAlterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\view\Panel\ProjectTypeAlterForm.Designer.cs">
+      <DependentUpon>ProjectTypeAlterForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\view\Panel\ProjectTypePanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -170,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="src\view\Panel\ProjectTypeAddForm.resx">
       <DependentUpon>ProjectTypeAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\view\Panel\ProjectTypeAlterForm.resx">
+      <DependentUpon>ProjectTypeAlterForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\view\Panel\ProjectTypePanel.resx">
       <DependentUpon>ProjectTypePanel.cs</DependentUpon>
