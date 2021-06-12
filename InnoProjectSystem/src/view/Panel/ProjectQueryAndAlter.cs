@@ -11,11 +11,14 @@ using System.Data.SqlClient;
 using InnoProjectSystem.src.Util;
 using InnoProjectSystem.src.models;
 using System.Text.RegularExpressions;
+using CrystalDecisions.CrystalReports.Engine;
 
 namespace InnoProjectSystem.src.view.Panel
 {
     public partial class ProjectQueryAndAlter : UserControl
     {
+        SqlDataAdapter ProjectAdapter;
+        DataTable ProjectTable;
         public ProjectQueryAndAlter()
         {
             InitializeComponent();
@@ -93,10 +96,10 @@ namespace InnoProjectSystem.src.view.Panel
             }
 
             SqlConnection sqlConnection = DbUtil.getConnection();
-            SqlDataAdapter ProjectAdapter = new SqlDataAdapter(queryCmd, sqlConnection);
-            DataTable ProjectTable = new DataTable();
-            ProjectAdapter.Fill(ProjectTable);
-            this.ProjectView.DataSource = ProjectTable;
+            this.ProjectAdapter = new SqlDataAdapter(queryCmd, sqlConnection);
+            this.ProjectTable = new DataTable();
+            this.ProjectAdapter.Fill(this.ProjectTable);
+            this.ProjectView.DataSource = this.ProjectTable;
 
             string[] vs =
             {
@@ -174,6 +177,27 @@ namespace InnoProjectSystem.src.view.Panel
             return;
         }
 
+        /*导出按钮事件处理*/
+        private void OutputBtn_Click(object sender, EventArgs e)
+        {
+            ReportDocument rd = new ReportDocument();
+            //获取报表路径
+            string reportPath = "D:\\大学资料\\Window编程\\InnoProjectSystem\\InnoProjectSystem\\src\\ProjectReport.rpt";
+            rd.Load(reportPath);
+
+            //绑定数据集，注意一个表用一个数据集。
+            DataSet ReportDS = new DataSet();
+            DataTable ReportTable = this.ProjectTable;
+            ReportTable.TableName = "ReportTable";
+
+            ReportDS.Tables.Add(ReportTable);
+            rd.SetDataSource(ReportDS);
+
+            ReportForm reportForm = new ReportForm(rd);
+            reportForm.ShowDialog();
+
+            rd.Close();
+        }
 
         //填充院系单位下拉框
         private void FillCollegeCBox()
@@ -270,6 +294,7 @@ namespace InnoProjectSystem.src.view.Panel
         {
             return Regex.IsMatch(value, @"^[1-9]\d*$");
         }
+
 
     }
 }

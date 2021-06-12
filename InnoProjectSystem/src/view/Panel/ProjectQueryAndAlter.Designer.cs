@@ -47,6 +47,7 @@ namespace InnoProjectSystem.src.view.Panel
             this.ProjectView = new System.Windows.Forms.DataGridView();
             this.UpdateBtn = new System.Windows.Forms.Button();
             this.DeleteBtn = new System.Windows.Forms.Button();
+            this.OutputBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ProjectView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -209,7 +210,7 @@ namespace InnoProjectSystem.src.view.Panel
             // UpdateBtn
             // 
             this.UpdateBtn.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.UpdateBtn.Location = new System.Drawing.Point(573, 548);
+            this.UpdateBtn.Location = new System.Drawing.Point(436, 548);
             this.UpdateBtn.Name = "UpdateBtn";
             this.UpdateBtn.Size = new System.Drawing.Size(132, 29);
             this.UpdateBtn.TabIndex = 74;
@@ -220,7 +221,7 @@ namespace InnoProjectSystem.src.view.Panel
             // DeleteBtn
             // 
             this.DeleteBtn.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DeleteBtn.Location = new System.Drawing.Point(298, 548);
+            this.DeleteBtn.Location = new System.Drawing.Point(200, 548);
             this.DeleteBtn.Name = "DeleteBtn";
             this.DeleteBtn.Size = new System.Drawing.Size(132, 29);
             this.DeleteBtn.TabIndex = 73;
@@ -228,10 +229,22 @@ namespace InnoProjectSystem.src.view.Panel
             this.DeleteBtn.UseVisualStyleBackColor = true;
             this.DeleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
             // 
+            // OutputBtn
+            // 
+            this.OutputBtn.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.OutputBtn.Location = new System.Drawing.Point(669, 548);
+            this.OutputBtn.Name = "OutputBtn";
+            this.OutputBtn.Size = new System.Drawing.Size(132, 29);
+            this.OutputBtn.TabIndex = 75;
+            this.OutputBtn.Text = "导 出";
+            this.OutputBtn.UseVisualStyleBackColor = true;
+            this.OutputBtn.Click += new System.EventHandler(this.OutputBtn_Click);
+            // 
             // ProjectQueryAndAlter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.OutputBtn);
             this.Controls.Add(this.UpdateBtn);
             this.Controls.Add(this.DeleteBtn);
             this.Controls.Add(this.ProjectView);
@@ -279,5 +292,6 @@ namespace InnoProjectSystem.src.view.Panel
         private System.Windows.Forms.DataGridView ProjectView;
         private System.Windows.Forms.Button UpdateBtn;
         private System.Windows.Forms.Button DeleteBtn;
+        private System.Windows.Forms.Button OutputBtn;
     }
 }
