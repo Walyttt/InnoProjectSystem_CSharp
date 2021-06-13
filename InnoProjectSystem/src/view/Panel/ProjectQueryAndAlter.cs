@@ -197,6 +197,8 @@ namespace InnoProjectSystem.src.view.Panel
             reportForm.ShowDialog();
 
             rd.Close();
+
+            
         }
 
         //填充院系单位下拉框

@@ -60,5 +60,38 @@ namespace InnoProjectSystem.src.models
 
             return res;
         }
+
+        public bool Login()
+        {
+            SqlConnection cnn = DbUtil.getConnection();
+            string cmdTxt = "Select name from Users where Id=@userid and pwd=@userpwd";
+            SqlCommand cmd = new SqlCommand(cmdTxt, cnn);
+
+            cmd.Parameters.AddWithValue("@userid", this.Id);
+            cmd.Parameters.AddWithValue("@userpwd", this.Pwd);
+
+            try
+            {
+                cnn.Open();
+                object tempobj = cmd.ExecuteScalar();
+                if (tempobj == null)
+                {
+                    cnn.Close();
+                    return false;
+                }
+                this.name = tempobj.ToString();
+            }
+            catch (Exception e)
+            {
+                ;
+            }
+            finally
+            {
+                if (cnn.State == System.Data.ConnectionState.Open)
+                    cnn.Close();
+            }
+
+            return true;
+        }
     }
 }

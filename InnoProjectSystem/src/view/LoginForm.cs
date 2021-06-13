@@ -41,46 +41,21 @@ namespace InnoProjectSystem
             }
 
             //身份验证
-            string userid = UseridTxt.Text;
-            string userpwd = PwdTxt.Text;
-            string username = "";
+            this.user.Id = UseridTxt.Text;
+            this.user.Pwd = PwdTxt.Text;
 
-            string cmdTxt = "Select name from Users where Id=@userid and pwd=@userpwd";
-            SqlConnection cnn = DbUtil.getConnection();
-            SqlCommand cmd = new SqlCommand(cmdTxt, cnn);
-            cmd.Parameters.AddWithValue("@userid", userid);
-            cmd.Parameters.AddWithValue("@userpwd", userpwd);
-
-            try
+            if (this.user.Login())
             {
-                cnn.Open();
-                object tempobj = cmd.ExecuteScalar();
-                if (tempobj == null)
-                {
-                    cnn.Close();
-                    FaultLabel.Visible = true;
-                    return;
-                }
-                username = tempobj.ToString();
+                this.DialogResult = DialogResult.OK;
+                this.Close();
             }
-            catch(Exception ex)
+            else
             {
-                ;
-            }
-            finally
-            {
-                if (cnn.State == ConnectionState.Open)
-                {
-                    cnn.Close();
-                }
+                FaultLabel.Visible = true;
             }
 
-            //登录成功，构造user对象，返回确认值
-            this.user.Id = userid;
-            this.user.Name = username;
-            this.user.Pwd = userpwd;
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+            return;
         }
+
     }
 }
